@@ -53,7 +53,6 @@ def boyer_moore(text, pattern):
     return positions
 
 
-# Тестирование алгоритма
 def test_boyer_moore():
     text = "ABAAABCDABC"
     pattern1 = "ABC"
@@ -71,5 +70,4 @@ def test_boyer_moore():
     print("Все тесты пройдены!")
 
 
-# Запуск тестов
 test_boyer_moore()

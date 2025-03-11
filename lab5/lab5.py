@@ -31,9 +31,9 @@ def test_shift_and():
     pattern2 = "cad"
     pattern3 = "xyz"
 
-    print(f"Тест 1: {shift_and(pattern1, text)}")  # Должно быть [0, 7]
-    print(f"Тест 2: {shift_and(pattern2, text)}")  # Должно быть [4]
-    print(f"Тест 3: {shift_and(pattern3, text)}")  # Должно быть []
+    print(f"Тест 1: {shift_and(pattern1, text)}")
+    print(f"Тест 2: {shift_and(pattern2, text)}")
+    print(f"Тест 3: {shift_and(pattern3, text)}")
 
     assert shift_and(pattern1, text) == [0, 7], "Ошибка в тесте 1"
     assert shift_and(pattern2, text) == [4], "Ошибка в тесте 2"

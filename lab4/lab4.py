@@ -33,7 +33,6 @@ def karp_rabin(text, pattern, q=101):
     return positions
 
 
-# Тестирование алгоритма
 def test_karp_rabin():
     text = "ABAAABCDABC"
     pattern1 = "ABC"
@@ -51,5 +50,4 @@ def test_karp_rabin():
     print("Все тесты пройдены!")
 
 
-# Запуск тестов
 test_karp_rabin()
