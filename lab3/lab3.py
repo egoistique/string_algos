@@ -3,7 +3,7 @@ def bad_character_heuristic(pattern):
     bad_char = {char: -1 for char in set(pattern)}
     for i in range(len(pattern)):
         bad_char[pattern[i]] = i
-    return bad_char
+    return bad_char # Получаем таблицу в которой для каждого символа стоит последнее его вхождение в шаблон
 
 
 def good_suffix_heuristic(pattern):
@@ -58,6 +58,9 @@ def test_boyer_moore():
     pattern1 = "ABC"
     pattern2 = "AA"
     pattern3 = "XYZ"
+
+    text2 = "ABBABCABCCABCA"
+    pattern4 = "CABCCAB"
 
     print(f"Тест 1: {boyer_moore(text, pattern1)}")
     print(f"Тест 2: {boyer_moore(text, pattern2)}")

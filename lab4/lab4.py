@@ -1,20 +1,20 @@
 def gorner2mod(s, m, q):
-    """Вычисляет хеш строки s по схеме Горнера по модулю q при x = 2."""
+    """Вычисляет хеш строки s по схеме Горнера по модулю q при x = 31."""
     res = 0
     for i in range(m):
-        res = (res * 2 + ord(s[i])) % q  # ord() для преобразования символа в число
+        res = (res * 31 + ord(s[i])) % q  # ord() для преобразования символа в число
     return res
 
 
-def karp_rabin(text, pattern, q=101):
+def karp_rabin(text, pattern, q=2147483647):
     """Алгоритм Карпа-Рабина для поиска подстроки."""
     m, n = len(pattern), len(text)
     if m > n:
         return []
 
-    p2m = 1  # 2^(m-1) mod q
+    p2m = 1  # 31^(m-1) mod q
     for _ in range(m - 1):
-        p2m = (p2m * 2) % q
+        p2m = (p2m * 31) % q
 
     hp = gorner2mod(pattern, m, q)  # Хеш образца
     ht = gorner2mod(text[:m], m, q)  # Хеш первой подстроки текста
@@ -26,7 +26,7 @@ def karp_rabin(text, pattern, q=101):
                 positions.append(j)  # Совпадение найдено
 
         if j < n - m:
-            ht = ((ht - p2m * ord(text[j])) * 2 + ord(text[j + m])) % q
+            ht = ((ht - p2m * ord(text[j])) * 31 + ord(text[j + m])) % q
             if ht < 0:
                 ht += q  # Коррекция отрицательного значения
 
